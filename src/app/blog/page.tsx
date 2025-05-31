@@ -1,5 +1,12 @@
+import { Metadata } from "next";
 import { BlogHero } from "~/components/pages/blog/blog-hero";
 import { PostList } from "~/components/pages/blog/post-list";
+
+
+export const metadata: Metadata = {
+  title: "Blog | SETAU",
+  description: "Lee algunos articulos que tenemos publicados.",
+};
 
 export default function BlogPage() {
   const isDisabled = true

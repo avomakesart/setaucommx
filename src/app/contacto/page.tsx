@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contacto | SETAU",
+  description: "Envianos tus dudas, o realiza una llamada a nuestra oficina.",
+};
 
 export default function ContactPage() {
   return (
@@ -55,7 +61,7 @@ export default function ContactPage() {
                   </form>
                 </div>
 
-                <div className="gap-5 lg:gap-8 shadow border border-border bg-white flex flex-col p-6 rounded-3xl">
+                <div className="gap-5 lg:gap-8 shadow border border-border bg-white dark:text-accent flex flex-col p-6 rounded-3xl">
                   <div className="gap-4 text-base font-light leading-[1.4] flex flex-col">
                     <div>Correo Electronico:</div>
                     <div className="text-xl font-normal">

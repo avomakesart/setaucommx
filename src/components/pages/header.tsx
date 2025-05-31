@@ -23,7 +23,7 @@ export const Header = () => {
                   className="w-14"
                 />
                 <span className="text-2xl font-medium text-foreground">
-                  Setau
+                  SETAU
                 </span>
               </div>
 
