@@ -1,12 +1,15 @@
-import { DialogTitle } from "@radix-ui/react-dialog";
+"use client"
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "~/components/theme-toggle";
 import { LinkButton } from "~/components/ui/link-button";
-import { Drawer, DrawerBody, DrawerContent, DrawerTrigger } from "../ui/drawer";
+import { Drawer, DrawerBody, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
+import { useState } from "react";
+import { Button } from "../ui/button";
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <header className="w-full bg-background relative">
       <div className="md:px-8 lg:px-[3.25rem] py-4 px-5">
@@ -52,41 +55,51 @@ export const Header = () => {
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <div className="hidden lg:flex">
-              <LinkButton href="/contacto">
-                Contacto
-              </LinkButton>
+                <LinkButton href="/contacto">Contacto</LinkButton>
               </div>
-              <Drawer>
+              <Drawer open={isOpen} onOpenChange={setIsOpen}>
                 <DrawerTrigger asChild>
-                  <button className="flex bg-white border border-none p-2 lg:hidden">
-                    <HamburgerMenuIcon />
-                  </button>
+                  <div className="flex lg:hidden">
+                  <Button variant='ghost'><HamburgerMenuIcon /></Button>
+                  </div>
                 </DrawerTrigger>
-                <DialogTitle className="sr-only">dude</DialogTitle>
                 <DrawerContent className="sm:max-w-lg">
+                  <DrawerHeader containerClassName="border-0 p-0">
+                    <DrawerTitle className="sr-only">
+                      Navega en nuestra web
+                    </DrawerTitle>
+                    <DrawerDescription className="sr-only">
+                      Menu para mobiles
+                    </DrawerDescription>
+                  </DrawerHeader>
+
                   <DrawerBody>
                     <nav className="flex flex-col items-start gap-8 text-4xl text-foreground">
                       <Link
                         href="/"
                         className="hover:text-[#0A1B1F] transition"
+                        onClick={() => setIsOpen(false)}
                       >
                         Inicio
                       </Link>
                       <Link
                         href="/nosotros"
                         className="hover:text-[#0A1B1F] transition"
+                        onClick={() => setIsOpen(false)}
                       >
                         Nosotros
                       </Link>
                       <Link
                         href="/blog"
                         className="hover:text-[#0A1B1F] transition"
+                        onClick={() => setIsOpen(false)}
                       >
                         Blog
                       </Link>
                       <Link
                         href="/contacto"
                         className="hover:text-[#0A1B1F] transition"
+                        onClick={() => setIsOpen(false)}
                       >
                         Contacto
                       </Link>

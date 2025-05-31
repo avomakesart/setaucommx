@@ -3,10 +3,10 @@ import { LinkButton } from "~/components/ui/link-button";
 
 export const Hero = () => {
   return (
-    <section className="w-full py-20 px-4 md:px-12 bg-background">
+    <section className="w-full py-4 lg:py-20 px-4 md:px-12 bg-background">
       <div className="max-w-full lg:max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-16">
         {/* Left: Text */}
-        <div className="flex-1 md:w-full flex flex-col items-start justify-center text-left">
+        <div className="flex-1 w-full lg:w-auto flex flex-col items-start justify-center text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-accent-foreground leading-tight  mb-6">
             Gestiones sus riesgos y
             <br />
@@ -16,9 +16,7 @@ export const Hero = () => {
             Somos especialistas en consultoría para la prevención de riesgos
             patrimoniales.
           </p>
-          <LinkButton href="#about">
-            Conocer mas
-          </LinkButton>
+          <LinkButton href="#about">Conocer mas</LinkButton>
         </div>
         {/* Right: Image + Card */}
         <div className="flex-1 flex flex-col items-center relative w-full max-w-full xl:max-w-[480px]">

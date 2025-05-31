@@ -42,33 +42,39 @@ export const Articles = ({ isHidden }: { isHidden?: boolean }) => {
 
             <div className="max-w-[43rem]">
               <h2 className="text-4xl lg:text-6xl">
-                Explore nuestros articulos 
+                Explore nuestros articulos
               </h2>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2 items-center">
-            <PrevButton
-              onClick={onPrevButtonClick}
-              disabled={prevBtnDisabled}
-            />
-            <NextButton
-              onClick={onNextButtonClick}
-              disabled={nextBtnDisabled}
-            />
-          </div>
+          {isHidden ? null : (
+            <div className="grid grid-cols-2 gap-2 items-center">
+              <PrevButton
+                onClick={onPrevButtonClick}
+                disabled={prevBtnDisabled}
+              />
+              <NextButton
+                onClick={onNextButtonClick}
+                disabled={nextBtnDisabled}
+              />
+            </div>
+          )}
         </div>
 
         <div className="mx-auto">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex touch-pan-y touch-pinch-zoom -ml-1 max-w-1/2">
-              {isHidden ? <div className="text-5xl my-20">Proximamente</div> : SLIDES.map((slide) => (
-                <div
-                  className="transform-3d flex-[0_0_50%] min-w-0 pl-4"
-                  key={slide}
-                >
-                  <ArticleItem />
-                </div>
-              ))}
+              {isHidden ? (
+                <div className="text-5xl my-20">Proximamente</div>
+              ) : (
+                SLIDES.map((slide) => (
+                  <div
+                    className="transform-3d flex-[0_0_50%] min-w-0 pl-4"
+                    key={slide}
+                  >
+                    <ArticleItem />
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>

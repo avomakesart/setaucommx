@@ -15,10 +15,10 @@ export const OurClients = () => {
   ];
   return (
     <Section id="info">
-      <div className="py-[3.12rem] mx-auto px-4 lg:px-12">
-        <div className="flex flex-col gap-12">
+      <div className="py-[3.12rem] w-full mx-auto">
+        <div className="flex flex-col w-full gap-12">
           <div className="flex w-full justify-start items-start flex-col gap-6">
-            <div className="gap-4 text-left justify-start items-start flex flex-col">
+            <div className="gap-4 w-full text-left justify-start items-start flex flex-col">
               <div className="gap-x-3 gap-y-3 text-foreground tracking-[normal] whitespace-nowrap justify-start items-center text-base font-light leading-normal flex">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

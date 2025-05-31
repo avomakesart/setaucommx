@@ -96,29 +96,35 @@ const DrawerContent = React.forwardRef<
 
 DrawerContent.displayName = "DrawerContent";
 
-const DrawerHeader = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithoutRef<"div">
->(({ children, className, ...props }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className="flex items-start justify-between gap-x-4 border-b border-gray-200 pb-4 dark:border-gray-900"
-      {...props}
-    >
-      <div className={cx("mt-1 flex flex-col gap-y-1", className)}>
-        {children}
+type DrawerHeaderProps = React.ComponentPropsWithoutRef<"div"> & {
+  containerClassName?: string;
+};
+const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
+  ({ children, className, containerClassName, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cx(
+          "flex items-start justify-between gap-x-4 border-b border-gray-200 pb-4 dark:border-gray-900",
+          containerClassName
+        )}
+        {...props}
+      >
+        <div className={cx("mt-1 flex flex-col gap-y-1", className)}>
+          {children}
+        </div>
+        <DrawerPrimitives.Close asChild>
+          <Button
+            variant="ghost"
+            className="aspect-square p-1 hover:bg-gray-100 dark:hover:bg-gray-400/10"
+          >
+            <RiCloseLine className="size-6" aria-hidden="true" />
+          </Button>
+        </DrawerPrimitives.Close>
       </div>
-      <DrawerPrimitives.Close asChild>
-        <Button
-          className="aspect-square p-1 hover:bg-gray-100 dark:hover:bg-gray-400/10"
-        >
-          <RiCloseLine className="size-6" aria-hidden="true" />
-        </Button>
-      </DrawerPrimitives.Close>
-    </div>
-  );
-});
+    );
+  }
+);
 
 DrawerHeader.displayName = "Drawer.Header";
 
