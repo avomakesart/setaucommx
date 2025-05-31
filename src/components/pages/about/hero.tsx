@@ -15,7 +15,7 @@ export const AboutHero = () => {
             nuestros servicios, diseñados para impulsar el crecimiento de su
             negocio.
           </p>
-          <LinkButton href="#info">Conoce mas</LinkButton>
+          <LinkButton href="#info">Conoce más</LinkButton>
         </div>
         {/* Right: Image + Card */}
         {/* <div className="flex-1 flex flex-col items-center relative w-full max-w-full xl:max-w-[480px]"> */}

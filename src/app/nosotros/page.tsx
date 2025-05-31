@@ -9,7 +9,7 @@ import { Values } from '~/components/pages/about/values'
 
 export const metadata: Metadata = {
   title: "Nosotros | SETAU",
-  description: "Conoce mas acerca de SETAU",
+  description: "Conoce más acerca de SETAU",
 };
 
 

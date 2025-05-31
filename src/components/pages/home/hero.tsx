@@ -16,7 +16,7 @@ export const Hero = () => {
             Somos especialistas en consultoría para la prevención de riesgos
             patrimoniales.
           </p>
-          <LinkButton href="#about">Conocer mas</LinkButton>
+          <LinkButton href="#about">Conocer más</LinkButton>
         </div>
         {/* Right: Image + Card */}
         <div className="flex-1 flex flex-col items-center relative w-full max-w-full xl:max-w-[480px]">

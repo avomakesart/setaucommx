@@ -64,7 +64,7 @@ export const Articles = ({ isHidden }: { isHidden?: boolean }) => {
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex touch-pan-y touch-pinch-zoom -ml-1 max-w-1/2">
               {isHidden ? (
-                <div className="text-5xl my-20">Proximamente</div>
+                <div className="text-5xl my-20">Próximamente</div>
               ) : (
                 SLIDES.map((slide) => (
                   <div

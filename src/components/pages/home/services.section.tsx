@@ -28,7 +28,6 @@ const servicesData = [
   },
 ];
 
-
 export const Services = () => {
   const [selectedService, setSelectedService] = useState(servicesData[0].label);
   return (
@@ -45,12 +44,14 @@ export const Services = () => {
             >
               <circle cx="6.5" cy="6" r="6" fill="currentColor"></circle>
             </svg>
-            <div className="text-white dark:text-accent-foreground">Servicios</div>
+            <div className="text-white dark:text-accent-foreground">
+              Servicios
+            </div>
           </div>
 
           <div className="max-w-[43rem]">
             <h2 className="text-4xl lg:text-6xl text-white dark:text-accent-foreground">
-             Explore nuestra oferta integral de servicios
+              Explore nuestra oferta integral de servicios
             </h2>
           </div>
         </div>
@@ -96,8 +97,11 @@ export const Services = () => {
                         {service.content}
                       </div>
                       <div className="flex">
-                        <Link href='/contacto' className="bg-white text-accent-foreground dark:text-accent text-center tracking-[-0.008em] whitespace-nowrap cursor-pointer justify-center items-center min-h-[3rem] text-base font-medium leading-normal transition-[background-color] duration-[0.2s,transform] delay-[0.2s] flex px-6 py-2 rounded-xl">
-                          Mas informacion
+                        <Link
+                          href="/contacto"
+                          className="bg-white text-accent-foreground dark:text-accent text-center tracking-[-0.008em] whitespace-nowrap cursor-pointer justify-center items-center min-h-[3rem] text-base font-medium leading-normal transition-[background-color] duration-[0.2s,transform] delay-[0.2s] flex px-6 py-2 rounded-xl"
+                        >
+                          Más Información
                         </Link>
                       </div>
                     </div>

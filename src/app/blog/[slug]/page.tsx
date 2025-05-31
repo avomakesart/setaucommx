@@ -13,7 +13,7 @@ export default async function BlogDetailsPage(){
     <div>
       {isDisabled ? (
         <div className="text-6xl py-24 mx-auto flex justify-center">
-          Proximamente
+          Próximamente
         </div>
       ) : (
         <div className="bg-background">

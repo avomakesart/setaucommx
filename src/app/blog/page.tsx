@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <div>
       {isDisabled ? (
-        <div className="text-6xl py-24 mx-auto flex justify-center">Proximamente</div>
+        <div className="text-6xl py-24 mx-auto flex justify-center">Próximamente</div>
       ) : (
         <>
           {" "}

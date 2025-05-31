@@ -13,7 +13,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-full md:max-w-6xl">
             <div className="flex flex-col gap-8 lg:gap-12">
               <div className="flex">
-                <h1 className="text-6xl">Contactanos hoy</h1>
+                <h1 className="text-6xl">Contáctanos hoy</h1>
               </div>
               <div className="grid place-items-stretch gap-8 lg:gap-12 lg:grid-cols-[66%_1fr] grid-rows-[auto] auto-cols-fr">
                 <div className="flex flex-col mb-0">

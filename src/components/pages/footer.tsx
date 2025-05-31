@@ -43,7 +43,7 @@ export const Footer = () => {
                 href="/contacto"
                 className="bg-[white] text-foreground dark:text-accent text-center tracking-[-0.008em] whitespace-nowrap cursor-pointer justify-center items-center min-h-[3rem] text-base font-medium leading-normal transition-[background-color] duration-[0.2s,transform] delay-[0.2s] flex px-6 py-2 rounded-xl"
               >
-                Contactanos
+                Contáctanos
               </Link>
             </div>
           </div>
