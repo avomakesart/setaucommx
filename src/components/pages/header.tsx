@@ -60,7 +60,7 @@ export const Header = () => {
               <Drawer open={isOpen} onOpenChange={setIsOpen}>
                 <DrawerTrigger asChild>
                   <div className="flex lg:hidden">
-                  <Button variant='ghost'><HamburgerMenuIcon /></Button>
+                  <Button variant='ghost' ><HamburgerMenuIcon className="h-6 w-4" /></Button>
                   </div>
                 </DrawerTrigger>
                 <DrawerContent className="sm:max-w-lg">

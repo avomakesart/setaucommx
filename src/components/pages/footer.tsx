@@ -32,7 +32,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#03256C] dark:bg-background">
-      <div className="px-14 pt-16 pb-13">
+      <div className="px-4 lg:px-14 pt-16 pb-13">
         <div className="max-w-full w-full mx-auto lg:max-w-7xl">
           <div className="flex gap-8 mb-16 justify-between items-center">
             <div className="text-xl dark:text-foreground text-background">
