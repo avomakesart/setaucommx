@@ -1,11 +1,10 @@
+import { DialogTitle } from "@radix-ui/react-dialog";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "~/components/theme-toggle";
 import { LinkButton } from "~/components/ui/link-button";
-import { Drawer, DrawerBody, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
-import { Button } from "../ui/button";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { DialogTitle } from "@radix-ui/react-dialog";
+import { Drawer, DrawerBody, DrawerContent, DrawerTrigger } from "../ui/drawer";
 
 export const Header = () => {
   return (
