@@ -50,7 +50,7 @@ export const Header = () => {
                   >
                     {navItem.label}
                     {pathname === navItem.href ? (
-                      <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-[#0A1B1F] rounded transition-all" />
+                      <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-[#0A1B1F] dark:bg-white rounded transition-all" />
                     ) : null}
                   </Link>
                 ))}
