@@ -1,15 +1,26 @@
-"use client"
+"use client";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "~/components/theme-toggle";
 import { LinkButton } from "~/components/ui/link-button";
-import { Drawer, DrawerBody, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../ui/drawer";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { navItems } from "./nav.utils";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   return (
     <header className="w-full bg-background relative">
       <div className="md:px-8 lg:px-[3.25rem] py-4 px-5">
@@ -31,24 +42,18 @@ export const Header = () => {
               </div>
 
               <nav className="hidden lg:flex items-center gap-8 text-lg text-foreground">
-                <Link href="/" className="hover:text-[#0A1B1F] transition">
-                  Inicio
-                </Link>
-                <Link
-                  href="/nosotros"
-                  className="hover:text-[#0A1B1F] transition"
-                >
-                  Nosotros
-                </Link>
-                <Link href="/blog" className="hover:text-[#0A1B1F] transition">
-                  Blog
-                </Link>
-                <Link
-                  href="/contacto"
-                  className="hover:text-[#0A1B1F] transition"
-                >
-                  Contacto
-                </Link>
+                {navItems.map((navItem) => (
+                  <Link
+                    href={navItem.href}
+                    className="hover:text-[#0A1B1F] transition relative"
+                    key={navItem.label}
+                  >
+                    {navItem.label}
+                    {pathname === navItem.href ? (
+                      <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-[#0A1B1F] rounded transition-all" />
+                    ) : null}
+                  </Link>
+                ))}
               </nav>
             </div>
 
@@ -60,7 +65,9 @@ export const Header = () => {
               <Drawer open={isOpen} onOpenChange={setIsOpen}>
                 <DrawerTrigger asChild>
                   <div className="flex lg:hidden">
-                  <Button variant='ghost' ><HamburgerMenuIcon className="h-6 w-4" /></Button>
+                    <Button variant="ghost">
+                      <HamburgerMenuIcon className="h-6 w-4" />
+                    </Button>
                   </div>
                 </DrawerTrigger>
                 <DrawerContent className="sm:max-w-lg">
