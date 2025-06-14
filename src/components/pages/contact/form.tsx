@@ -73,7 +73,7 @@ export const Form = ({
       </div>
 
       <HCaptcha
-        sitekey={process.env.HCAPTCHA_KEY as string}
+        sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_KEY as string}
         onLoad={onLoad}
         onVerify={setToken}
         ref={captchaRef}
