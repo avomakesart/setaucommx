@@ -28,6 +28,7 @@ export const Header = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-12">
               {/* Logo and Brand */}
+              <Link href="/">
               <div className="flex items-center gap-2">
                 <Image
                   src="/setau-logo.png"
@@ -40,6 +41,7 @@ export const Header = () => {
                   SETAU
                 </span>
               </div>
+              </Link>
 
               <nav className="hidden lg:flex items-center gap-8 text-lg text-foreground">
                 {navItems.map((navItem) => (
