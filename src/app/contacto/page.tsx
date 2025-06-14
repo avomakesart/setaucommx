@@ -18,10 +18,8 @@ export default async function ContactPage() {
     content: string;
   }) => {
     "use server";
-    const resend = new Resend(
-      process.env.RESEND_API_KEY || "re_8u7BgKPz_GX4kN8kFCrCE4z1c992vRRgt"
-    );
-    const toEmail = process.env.RESEND_EMAIL;
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const toEmail = process.env.RESEND_EMAIL as string;
     const response = await resend.emails.send({
       from: "no-reply@updates.setau.com.mx",
       to: toEmail,
