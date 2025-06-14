@@ -1,11 +1,37 @@
 import { Metadata } from "next";
+import { Resend } from "resend";
+import { Form } from "~/components/pages/contact/form";
 
 export const metadata: Metadata = {
   title: "Contacto | SETAU",
   description: "Envianos tus dudas, o realiza una llamada a nuestra oficina.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const sendEmail = async ({
+    from,
+    fullName,
+    content,
+  }: {
+    from: string;
+    fullName: string;
+    content: string;
+  }) => {
+    "use server";
+    const resend = new Resend(
+      process.env.RESEND_API_KEY || "re_8u7BgKPz_GX4kN8kFCrCE4z1c992vRRgt"
+    );
+    const toEmail = process.env.RESEND_EMAIL;
+    const response = await resend.emails.send({
+      from: "no-reply@updates.setau.com.mx",
+      to: toEmail,
+      subject: `Nuevo mensaje del formulario de la web de: ${fullName} - con correo: ${from}`,
+      html: content,
+    });
+
+    return response;
+  };
+
   return (
     <div>
       <div className="bg-background">
@@ -13,52 +39,11 @@ export default function ContactPage() {
           <div className="mx-auto max-w-full md:max-w-6xl">
             <div className="flex flex-col gap-8 lg:gap-12">
               <div className="flex">
-                <h1 className="text-6xl">Contáctanos hoy</h1>
+                <h1 className="text-5xl">Contáctanos hoy</h1>
               </div>
               <div className="grid place-items-stretch gap-8 lg:gap-12 lg:grid-cols-[66%_1fr] grid-rows-[auto] auto-cols-fr">
                 <div className="flex flex-col mb-0">
-                  <form action="">
-                    <div>
-                      <label htmlFor="fullName" className="text-base">
-                        Nombre completo
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full py-2 px-6 block h-9 mt-3 text-base mb-6 min-h-14 rounded-lg bg-background text-foreground border border-border"
-                        placeholder="Ingresa tu nombre completo"
-                        name="fullName"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="text-base">
-                        Correo Electronico
-                      </label>
-                      <input
-                        type="email"
-                        className="w-full py-2 px-6 block h-9 text-base mt-3 mb-6 min-h-14 rounded-lg bg-background text-foreground border border-border"
-                        name="email"
-                        placeholder="Tu correo electronio, eg. correo@gmail.com"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="" className="text-base">
-                        Mensaje
-                      </label>
-                      <textarea
-                        rows={4}
-                        className="w-full py-4 px-6 block mt-3 resize-none text-base mb-6 min-h-52 rounded-lg bg-background text-foreground border border-border"
-                        placeholder="Escribe tu mensaje aqui"
-                        name="message"
-                      />
-                    </div>
-
-                    <div className="flex">
-                      <button className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-md bg-linear-to-b from-blue-500 to-blue-600 px-5 py-2.5 text-center text-base font-medium text-white shadow-xs transition-all duration-100 ease-in-out hover:opacity-90 sm:w-fit dark:text-white">
-                        Enviar
-                      </button>
-                    </div>
-                  </form>
+                  <Form sendEmail={sendEmail} />
                 </div>
 
                 <div className="gap-5 lg:gap-8 shadow border border-border bg-white dark:text-accent flex flex-col p-6 rounded-3xl">
