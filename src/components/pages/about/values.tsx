@@ -72,7 +72,7 @@ export const Values = () => {
 
               <div className="max-w-[43rem]">
                 <h2 className="text-4xl text-foreground">
-                  Explore our comprehensive service offerings
+                  Descubre los valores que nos definen como empresa
                 </h2>
               </div>
             </div>
